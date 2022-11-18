@@ -1,0 +1,164 @@
+.card {
+    min-height: 100px;
+    margin-bottom: 50px;
+
+    &--wide {
+        display: inline-table;
+    }
+
+    &--with-underline,
+    &--with-underline-column {
+        display: flex;
+        justify-content: space-between;
+
+        padding-bottom: 50px;
+        border-bottom: 5px solid #C6B5AD;
+    }
+
+    &--with-underline-column {
+        max-width: 425px;
+        text-align: center;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &--with-underline:last-child,
+    &--with-underline-column:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: unset;
+    }
+
+    &__title-and-info-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 24px;
+
+        &--centered {
+            margin-top: 25px;
+            text-align: center;
+        }
+    }
+
+    &__info,
+    &__info-centered {
+        font-size: 12px;
+        text-align: right;
+
+        & p {
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
+        & button {
+            padding-top: 5px;
+            color: #98c7e6;
+            background-color: unset;
+        }
+
+        &-centered {
+            margin-top: 5px;
+            text-align: center;
+        }
+    }
+
+    &__text {
+        margin-top: 25px;
+
+        &--centered {
+            margin-top: 15px;
+            text-align: center;
+        }
+    }
+
+    &__image,
+    &__image--with-margin {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        &--with-margin {
+            margin-left: 115px;
+        }
+    }
+
+    &__winners-wrapper {
+        max-height: 500px;
+
+        &,
+        &--close {
+            overflow: hidden;
+            margin-top: 10px;
+            transition: max-height 0.25s ease-in, margin 0.25s;
+        }
+
+        &--close {
+            margin-top: 0;
+            max-height: 0;
+            transition: max-height 0.15s ease-out, margin 0.15s;
+        }
+    }
+
+    &__winner-wrapper {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    & a {
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 1280px) {
+    .card {
+
+        &--with-underline,
+        &--with-underline-column {
+            flex-direction: column;
+        }
+
+        &__image,
+        &__image--with-margin {
+            &--with-margin {
+                margin-top: 50px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        &__title-and-info-wrapper {
+            flex-direction: column;
+        }
+
+        &__info {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+    }
+}
+
+// @media (max-width: 320px) {
+
+// }

@@ -1,0 +1,25 @@
+#root {
+    margin: 0 auto;
+    max-width: 1120px;
+
+    font-size: 18px;
+}
+
+
+@media (max-width: 1280px) {
+    #root {
+        margin: 0 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    #root {
+        margin: 0 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    #root {
+        margin: 0 20px;
+    }
+}

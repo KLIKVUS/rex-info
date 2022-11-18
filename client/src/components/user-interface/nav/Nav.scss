@@ -1,0 +1,52 @@
+.nav {
+    height: 50px;
+    max-width: 320px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #2C2F29;
+
+    &__link {
+        position: relative;
+        transition: padding-bottom 0.1s;
+
+        &::after {
+            content: "";
+
+            height: 2px;
+            width: 0;
+
+            transition: width 0.25s;
+            transform: translate(-50%, -50%);
+
+            background-color: #C6B5AD;
+            border-radius: 7px;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+        }
+
+        &.active,
+        &:hover {
+            padding-bottom: 5px;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 320px) {
+    .nav {
+        margin-bottom: 25px;
+    }
+}
