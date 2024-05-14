@@ -88,7 +88,7 @@ router.post(
             const isMatch = await bcrypt.compare(password, user.password);
 
             if (!isMatch) {
-                return res.status(400).json({ message: "Некорректные данные при входе." });
+                return res.status(400).json({ message: "Пароль неверный." });
             }
 
             setCookie(res, user.id);

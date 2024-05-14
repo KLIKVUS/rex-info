@@ -24,8 +24,7 @@ const schema = new Schema({
         require: true
     },
     imgLink: {
-        type: String,
-        require: false
+        type: String
     },
     author: {
         type: Types.ObjectId,

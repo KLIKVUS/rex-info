@@ -1,0 +1,23 @@
+.admin-main {
+    margin: auto;
+    max-width: 640px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 20px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input,
+textarea {
+    padding: 10px 20px;
+    background-color: #929090;
+}

@@ -21,10 +21,10 @@ function Menu() {
                 </div>
             </div>
 
-            <div className={navState ? "admin-nav__links-wrapper" : "admin-nav__links-wrapper--close"}>
-                <NavLink to={"news-list"} className="admin-nav__link">Новости</NavLink>
-                <NavLink to={"content-list"} className="admin-nav__link">Контент</NavLink>
-                <NavLink to={"tournaments-list"} className="admin-nav__link">Турниры</NavLink>
+            <div onClick={() => setNavState(!navState)} className={navState ? "admin-nav__links-wrapper" : "admin-nav__links-wrapper--close"}>
+                <NavLink to={"tools-for-news"} className="admin-nav__link">Новости</NavLink>
+                <NavLink to={"tools-for-content"} className="admin-nav__link">Контент</NavLink>
+                <NavLink to={"tools-for-tournaments"} className="admin-nav__link">Турниры</NavLink>
                 <NavLink to={"/"} className="admin-nav__back-link">Главная</NavLink>
                 <button className="admin-nav__btn" onClick={logoutHandler}>Выйти из аккаунта</button>
             </div>

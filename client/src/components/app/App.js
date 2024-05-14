@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { createBrowserHistory } from "history";
 
 import Nav from '../user-interface/nav/Nav';
 import News from '../user-interface/news/News';
@@ -11,9 +12,9 @@ import { useAuth } from '../../hooks/auth.hook';
 
 import Auth from '../admin-interface/auth/Auth';
 import Menu from '../admin-interface/menu/Menu';
-import ToolsForNews from '../admin-interface/news/ToolsForNews';
-import ToolsForContent from '../admin-interface/news/ToolsForContent';
-import ToolsForTournaments from '../admin-interface/news/ToolsForTournaments';
+import ToolsForNews from '../admin-interface/tools/forNews/index';
+import ToolsForContent from '../admin-interface/tools/ToolsForContent';
+import ToolsForTournaments from '../admin-interface/tools/ToolsForTournaments';
 
 import './App.scss';
 
@@ -39,10 +40,10 @@ function App() {
             </AuthContext.Provider>
         )
     }
-
+    const customHistory = createBrowserHistory();
 
     return (
-        <Routes>
+        <Routes history={customHistory}>
             {/* <Route path="*" exact element={<Navigate to={"/not-found"} status={404} />} /> */}
             <Route path="/not-found" element={"Not Found Page"} />
 
@@ -56,10 +57,10 @@ function App() {
 
             <Route path="/admin" element={<AddContext />}>
                     <Route element={<RequireAuth isAuthenticated={isAuthenticated} />}>
-                        <Route index element={<Navigate to={"ToolsForNews"} />} />
-                        <Route path="ToolsForNews" element={<ToolsForNews />} />
-                        <Route path="ToolsForContent" element={<ToolsForContent />} />
-                        <Route path="ToolsForTournaments" element={<ToolsForTournaments />} />
+                        <Route index element={<Navigate to={"tools-for-news"} />} />
+                        <Route path="tools-for-news" element={<ToolsForNews />} />
+                        <Route path="tools-for-content" element={<ToolsForContent />} />
+                        <Route path="tools-for-tournaments" element={<ToolsForTournaments />} />
                     </Route>
 
                     <Route path="auth" element={<Auth />} />
